@@ -15,14 +15,14 @@ fn main() {
 
         let b = s.spawn(|| {
             println!("hello 111");
-            // panic!("panic here");
+            panic!("panic here");
 
             1919810
         });
 
-        let m = k.join().unwrap();
+        let m = b.join().unwrap();
         println!("m: {}", m);
-        let n = b.join().unwrap();
+        let n = k.join().unwrap();
         println!("n: {}", n);
 
         (m, n)
